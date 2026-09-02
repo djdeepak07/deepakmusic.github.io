@@ -1,74 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DJ Deepak Music</title>
-<meta name="description" content="DJ Deepak Music - Feel The Beat">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<header class="navbar">
-  <div class="logo"><span>DJ</span> DEEPAK</div>
-  <button class="menu" onclick="toggleMenu()">☰</button>
-  <nav id="nav">
-    <a href="#home">Home</a>
-    <a href="#latest">Latest</a>
-    <a href="#trending">Trending</a>
-    <a href="#collections">Collections</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
-
-<main>
-<section id="home" class="hero">
-  <div class="hero-content">
-    <p class="tag">DJ • MUSIC • VIBES</p>
-    <h1>DJ <span>DEEPAK</span><br>MUSIC</h1>
-    <p class="sub">Feel The Beat • Live The Music</p>
-    <a class="btn" href="#latest">Explore Music</a>
-  </div>
-</section>
-
-<section id="latest" class="section">
-  <div class="section-title"><p>NEW RELEASES</p><h2>Latest <span>Music</span></h2></div>
-  <div class="cards">
-    <article class="card"><div class="cover">01</div><h3>Your Track Name</h3><p>DJ Deepak • Original / Licensed</p><button onclick="playTrack('Your Track Name')">▶ Play</button></article>
-    <article class="card"><div class="cover">02</div><h3>New DJ Mix</h3><p>DJ Deepak • Mix</p><button onclick="playTrack('New DJ Mix')">▶ Play</button></article>
-    <article class="card"><div class="cover">03</div><h3>Latest Release</h3><p>DJ Deepak • Music</p><button onclick="playTrack('Latest Release')">▶ Play</button></article>
-  </div>
-</section>
-
-<section id="trending" class="section dark">
-  <div class="section-title"><p>MOST PLAYED</p><h2>Trending <span>Now</span></h2></div>
-  <div class="trend-list">
-    <div class="trend"><b>01</b><div><strong>Trending Track 01</strong><small>DJ Deepak</small></div><button onclick="playTrack('Trending Track 01')">▶</button></div>
-    <div class="trend"><b>02</b><div><strong>Trending Track 02</strong><small>DJ Deepak</small></div><button onclick="playTrack('Trending Track 02')">▶</button></div>
-    <div class="trend"><b>03</b><div><strong>Trending Track 03</strong><small>DJ Deepak</small></div><button onclick="playTrack('Trending Track 03')">▶</button></div>
-  </div>
-</section>
-
-<section id="collections" class="section">
-  <div class="section-title"><p>DJ COLLECTIONS</p><h2>Music <span>Collections</span></h2></div>
-  <div class="collection-grid">
-    <div class="collection"><div>🔥</div><h3>DJ Remix</h3><p>Add your legally licensed/original mixes here.</p></div>
-    <div class="collection"><div>🎧</div><h3>Party Mix</h3><p>Add your party mixes and playlists here.</p></div>
-    <div class="collection"><div>⚡</div><h3>Special Mix</h3><p>Add your exclusive original tracks here.</p></div>
-  </div>
-</section>
-
-<section id="contact" class="contact">
-  <p>GET IN TOUCH</p><h2>Contact <span>DJ Deepak</span></h2>
-  <p class="contact-text">For music, collaborations and enquiries.</p>
-  <a class="btn" href="mailto:your-email@example.com">Contact Me</a>
-</section>
-</main>
-
-<footer>© 2026 DJ Deepak Music • Made with ❤️ & Beats</footer>
-
-<script>
-function playTrack(name){ alert("Add your own/original/licensed audio link for: " + name); }
-function toggleMenu(){ document.getElementById("nav").classList.toggle("show"); }
-</script>
-</body>
-</html>
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>DJ Deepak Music</title><link rel="stylesheet" href="style.css"></head>
+<body><header class="navbar"><div class="logo"><span id="logoLeft">DJ</span> <span style="color:#fff" id="logoRight">DEEPAK</span></div><button class="menu" onclick="toggleMenu()">☰</button><nav id="nav"><a href="#home">Home</a><a href="#latest">Latest</a><a href="#trending">Trending</a><a href="#collections">Collections</a><a href="#contact">Contact</a></nav></header>
+<main><section id="home" class="hero"><div class="hero-content"><p class="tag" id="tagline"></p><h1><span id="hero1"></span> <span id="hero2"></span><br><span id="hero3"></span></h1><p class="sub" id="subtitle"></p><a class="btn" href="#latest">Explore Music</a></div></section>
+<section id="latest" class="section"><div class="section-title"><p>NEW RELEASES</p><h2>Latest <span>Music</span></h2></div><div class="cards" id="songCards"></div></section>
+<section id="trending" class="section dark"><div class="section-title"><p>MOST PLAYED</p><h2>Trending <span>Now</span></h2></div><div class="trend-list" id="trendList"></div></section>
+<section id="collections" class="section"><div class="section-title"><p>DJ COLLECTIONS</p><h2>Music <span>Collections</span></h2></div><div class="collection-grid"><div class="collection"><div>🔥</div><h3>DJ Remix</h3><p>Add your legally licensed/original mixes here.</p></div><div class="collection"><div>🎧</div><h3>Party Mix</h3><p>Add your party mixes and playlists here.</p></div><div class="collection"><div>⚡</div><h3>Special Mix</h3><p>Add your exclusive original tracks here.</p></div></div></section>
+<section id="contact" class="contact"><p>GET IN TOUCH</p><h2>Contact <span>DJ Deepak</span></h2><p class="contact-text">For music, collaborations and enquiries.</p><a class="btn" id="emailBtn">Email</a> <a class="btn" id="waBtn" target="_blank">WhatsApp</a><p style="margin-top:18px;color:#999" id="instaText"></p></section></main><footer id="footer"></footer>
+<script src="config.js"></script><script>
+let audio=null;function safe(x){return String(x??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
+function playTrack(s){if(!s.url){alert("Admin me is song ka Audio URL / file path add karo.");return}if(audio)audio.pause();audio=new Audio(s.url);audio.play().catch(()=>alert("Audio URL/path check karo."))}
+function toggleMenu(){document.getElementById("nav").classList.toggle("show")}
+function fill(){document.title=siteConfig.siteName||"DJ Deepak Music";for(const [id,k] of [["logoLeft","logoLeft"],["logoRight","logoRight"],["tagline","tagline"],["hero1","heroTitleLine1"],["hero2","heroTitleLine2"],["hero3","heroTitleLine3"],["subtitle","subtitle"]])document.getElementById(id).textContent=siteConfig[k]||"";
+document.getElementById("songCards").innerHTML=(siteConfig.songs||[]).map((s,i)=>`<article class="card"><div class="cover">${String(i+1).padStart(2,"0")}</div><h3>${safe(s.name)}</h3><p>${safe(s.artist)}</p><button onclick='playTrack(${JSON.stringify(s)})'>▶ Play</button></article>`).join("");
+document.getElementById("trendList").innerHTML=(siteConfig.trending||[]).map((s,i)=>`<div class="trend"><b>${String(i+1).padStart(2,"0")}</b><div><strong>${safe(s.name)}</strong><small>${safe(s.artist)}</small></div><button onclick='playTrack(${JSON.stringify(s)})'>▶</button></div>`).join("");
+document.getElementById("emailBtn").href="mailto:"+(siteConfig.email||"");document.getElementById("waBtn").href="https://wa.me/91"+String(siteConfig.whatsapp||"").replace(/\D/g,"");document.getElementById("instaText").textContent="Instagram: "+(siteConfig.instagram||"");document.getElementById("footer").textContent="© 2026 "+(siteConfig.siteName||"DJ Deepak Music")+" • Made with ❤️ & Beats";if(siteConfig.banner)document.querySelector(".hero").style.backgroundImage=`linear-gradient(90deg,rgba(0,0,0,.8),rgba(0,0,0,.35)),url("${siteConfig.banner}")`}
+fill();</script></body></html>
